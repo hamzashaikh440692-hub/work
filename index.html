@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agency — Animation Studio</title>
+<meta name="description" content="2D animation, 3D animation, AI generated visuals and frame by frame animation. A dark, cinematic animation studio.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="package-lock.json">
+<link rel="stylesheet" href="package.json">
+<link rel="stylesheet" href="vite.config.js">
+<link rel="stylesheet" href="main.js">
+</head>
+<body>
+
+<div id="progress"></div>
+<div id="glow" aria-hidden="true"></div>
+
+<header id="siteHeader">
+  <nav class="nav" aria-label="Main">
+    <a href="#/home" class="logo">Agency<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#/home" data-link="home">Home</a></li>
+      <li><a href="#/services" data-link="services">Services</a></li>
+      <li><a href="#/contact" data-link="contact" class="nav-cta">Contact</a></li>
+    </ul>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#/home" data-link="home">Home</a>
+  <a href="#/services" data-link="services">Services</a>
+  <a href="#/contact" data-link="contact">Contact</a>
+</div>
+
+<main>
+
+  <!-- ================= HOME ================= -->
+  <section id="page-home" class="page">
+
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="hero-kicker">2D · 3D · AI · Frame by frame</p>
+        <h1>
+          <span class="w" style="--i:0">We</span>
+          <span class="w" style="--i:1">bring</span>
+          <span class="w" style="--i:2">ideas</span>
+          <span class="w" style="--i:3">to</span>
+          <em class="w" style="--i:4">life</em>
+          <span class="w" style="--i:5">in</span>
+          <em class="w" style="--i:6">motion.</em>
+        </h1>
+        <p class="sub">An animation studio for brands, products and stories. Explainers, 3D product films, AI generated visuals and hand-crafted frame by frame animation, all made by one team.</p>
+        <div class="hero-btns">
+          <a class="btn primary" href="#/home" data-scroll="portfolio">View our work</a>
+          <a class="btn outline" href="#/contact">Start a project</a>
+        </div>
+      </div>
+      <div class="scroll-down" aria-hidden="true"><span>Scroll</span><i></i></div>
+    </section>
+
+    <div class="marquee" aria-hidden="true"><div class="marquee-track" id="marqueeTrack"></div></div>
+
+    <!-- portfolio -->
+    <section class="section center" id="portfolio">
+      <p class="eyebrow reveal">Selected work</p>
+      <h2 class="section-title reveal d1">Our <em>Portfolio</em></h2>
+      <div class="filters reveal d2" id="filters" role="group" aria-label="Filter projects">
+        <button class="filter-btn on" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="2d">2D Animation</button>
+        <button class="filter-btn" data-filter="3d">3D Animation</button>
+        <button class="filter-btn" data-filter="ai">AI Generated</button>
+        <button class="filter-btn" data-filter="frame">Frame By Frame</button>
+      </div>
+      <div class="work-grid" id="workGrid"></div>
+      <p class="empty-work" id="emptyWork">No projects in this category yet.</p>
+      <div class="view-all reveal"><a class="btn primary" href="#/portfolio">View all projects →</a></div>
+    </section>
+
+    <!-- process with the scroll line -->
+    <section class="process-wrap" id="processWrap">
+      <div class="process-sticky" id="processSticky">
+        <div class="line-container" aria-hidden="true">
+          <svg class="line-svg" id="lineSvg" viewBox="0 0 1280 720" preserveAspectRatio="none">
+            <path id="drawnLine" class="drawn-line" d="" />
+          </svg>
+        </div>
+        <div class="process-head">
+          <p class="eyebrow">How we work</p>
+          <h2 class="section-title">From brief to <em>final frame</em></h2>
+        </div>
+        <div class="process-steps" id="steps">
+          <div class="step"><div class="num">01</div><h4>Discover</h4><p>We learn your goals, audience and the one thing people should remember.</p></div>
+          <div class="step"><div class="num">02</div><h4>Storyboard</h4><p>Scripts, storyboards and style frames, reviewed with you before animation starts.</p></div>
+          <div class="step"><div class="num">03</div><h4>Animate</h4><p>2D, 3D, AI or frame by frame, built and refined through clear review rounds.</p></div>
+          <div class="step"><div class="num">04</div><h4>Deliver</h4><p>Final files in every format you need, with source files handed over.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- stats -->
+    <section class="section" style="padding-top:5rem;padding-bottom:5rem">
+      <div class="stats reveal" id="stats">
+        <div class="stat"><b><span data-count="120">0</span>+</b><small>Projects delivered</small></div>
+        <div class="stat"><b><span data-count="8">0</span></b><small>Years of practice</small></div>
+        <div class="stat"><b><span data-count="6">0</span></b><small>Countries served</small></div>
+        <div class="stat"><b><span data-count="40">0</span>+</b><small>Happy clients</small></div>
+      </div>
+    </section>
+
+    <!-- services -->
+    <section class="section">
+      <p class="eyebrow reveal">What we do</p>
+      <h2 class="section-title reveal d1">Everything from the <em>first sketch</em> to the final frame.</h2>
+      <div class="grid" id="homeServices"></div>
+      <div class="reveal" style="margin-top:3rem"><a class="btn outline" href="#/services">See all services →</a></div>
+    </section>
+
+    <!-- testimonials -->
+    <section class="section center">
+      <p class="eyebrow reveal">Client words</p>
+      <h2 class="section-title reveal d1">What our <em>clients</em> say</h2>
+      <div class="quotes reveal d2" id="quotes"></div>
+      <div class="q-controls reveal d2">
+        <button class="q-btn" id="qPrev" aria-label="Previous testimonial">←</button>
+        <button class="q-btn" id="qNext" aria-label="Next testimonial">→</button>
+        <div class="dots" id="qDots"></div>
+      </div>
+    </section>
+
+    <!-- faq -->
+    <section class="section" style="padding-top:0">
+      <div class="center">
+        <p class="eyebrow reveal">Questions</p>
+        <h2 class="section-title reveal d1">Good to <em>know</em></h2>
+      </div>
+      <div class="faq" id="faq"></div>
+    </section>
+
+    <div class="cta reveal">
+      <div class="cta-box">
+        <h2>Have a project in mind? <em>Let's animate it.</em></h2>
+        <a class="btn primary" href="#/contact">Start a project →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PORTFOLIO (view all) ================= -->
+  <section id="page-portfolio" class="page" hidden>
+    <div class="pf-wrap" id="pfWrap">
+    <div class="pf-hero">
+      <div class="pf-hero-inner">
+        <div class="pf-copy">
+          <h1>Experience the Creativity Behind Our Portfolio</h1>
+          <p>Our portfolio shows what happens when creativity, motion and storytelling work together. Every project here started as a brief, and ended as something an audience remembers. Book a discovery call and let's start crafting the story your audience is waiting for.</p>
+          <a class="btn primary" href="#/contact">Book a discovery call →</a>
+        </div>
+        <div class="pf-art"><img id="pfImg" alt="Presenter in front of a wall of animated scenes" src="images/hero.webp"></div>
+      </div>
+    </div>
+    </div>
+
+    <section class="section center" id="allWork">
+      <p class="eyebrow reveal">All work</p>
+      <h2 class="section-title reveal d1">Every <em>project</em>, one place</h2>
+      <div class="filters reveal d2" id="pfFilters" role="group" aria-label="Filter projects">
+        <button class="filter-btn on" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="2d">2D Animation</button>
+        <button class="filter-btn" data-filter="3d">3D Animation</button>
+        <button class="filter-btn" data-filter="ai">AI Generated</button>
+        <button class="filter-btn" data-filter="frame">Frame By Frame</button>
+      </div>
+      <div class="work-grid" id="pfGrid"></div>
+      <p class="empty-work" id="pfEmpty">No projects in this category yet.</p>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="center">
+        <p class="eyebrow reveal">Why work with us</p>
+        <h2 class="section-title reveal d1">What every project <em>includes</em></h2>
+      </div>
+      <div class="grid">
+        <article class="svc-card tilt reveal"><div class="icon" aria-hidden="true">◎</div><span class="svc-num">01</span><h3>Clear review rounds</h3><p>Storyboards and style frames are approved before animation starts, so there are no surprises at the end.</p></article>
+        <article class="svc-card tilt reveal d1"><div class="icon" aria-hidden="true">◆</div><span class="svc-num">02</span><h3>One team, every style</h3><p>2D, 3D, AI generated and frame by frame work, all handled by the same studio and kept visually consistent.</p></article>
+        <article class="svc-card tilt reveal d2"><div class="icon" aria-hidden="true">▣</div><span class="svc-num">03</span><h3>Files in every format</h3><p>Final videos in the formats you need, with source files handed over when the project is done.</p></article>
+      </div>
+    </section>
+
+    <div class="cta reveal">
+      <div class="cta-box">
+        <h2>Liked what you saw? <em>Let's make yours.</em></h2>
+        <a class="btn primary" href="#/contact">Start a project →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SERVICES ================= -->
+  <section id="page-services" class="page" hidden>
+    <div class="page-head reveal">
+      <p class="eyebrow">Services</p>
+      <h1>Every stage, <em>one</em> studio</h1>
+      <p class="muted" style="margin:1rem auto 0">From the first sketch to the final frame. Search for what you need, or request a quote straight away.</p>
+      <div class="toolbar">
+        <input class="search" id="search" type="search" placeholder="Search services, e.g. animation, DFM…" aria-label="Search services">
+        <span class="count" id="count"></span>
+      </div>
+    </div>
+    <div class="svc-list" id="allServices"></div>
+    <div class="cta reveal">
+      <div class="cta-box">
+        <h2>Not sure which service you need? <em>Ask us.</em></h2>
+        <a class="btn primary" href="#/contact">Contact us →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section id="page-contact" class="page" hidden>
+    <div class="contact-wrap">
+      <div class="contact-info reveal">
+        <p class="eyebrow">Contact</p>
+        <h1>Tell us about <em>your idea</em></h1>
+        <p class="muted" style="margin-bottom:2rem">Share a few details and attach any brief, script or sketch. We reply within two working days.</p>
+        <div class="info-item">
+          <small>Portfolio</small>
+          <a href="https://creosyncportfolio" target="_blank" rel="noopener">creosyncportfolio</a>
+        </div>
+        <div class="info-item">
+          <small>Email</small>
+          <a href="mailto:hello@example.com">hello@example.com</a>
+        </div>
+        <div class="info-item">
+          <small>Services</small>
+          <span>2D Animation · 3D Animation · AI Generated · Frame By Frame · Product Design · Manufacturing · DFM</span>
+        </div>
+        <div class="hours">
+          <span class="open-now"><i></i>Currently accepting projects</span>
+          <p><span>Monday – Friday</span><span>9:00 – 18:00</span></p>
+          <p><span>Saturday</span><span>10:00 – 14:00</span></p>
+          <p><span>Sunday</span><span>Closed</span></p>
+        </div>
+      </div>
+
+      <div class="reveal d1">
+        <form class="form-card" id="contactForm" novalidate>
+          <div class="f-row">
+            <div class="f-group" data-field="name">
+              <label for="name">Full name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name">
+              <div class="f-help"></div>
+            </div>
+            <div class="f-group" data-field="email">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@company.com" autocomplete="email">
+              <div class="f-help"></div>
+            </div>
+          </div>
+          <div class="f-row">
+            <div class="f-group">
+              <label for="phone">Phone (optional)</label>
+              <input id="phone" name="phone" type="tel" placeholder="+92 ..." autocomplete="tel">
+            </div>
+            <div class="f-group" data-field="service">
+              <label for="service">Service needed</label>
+              <select id="service" name="service"><option value="">Choose one</option></select>
+              <div class="f-help"></div>
+            </div>
+          </div>
+          <div class="f-group">
+            <label for="budget">Budget range</label>
+            <select id="budget" name="budget">
+              <option value="">Prefer not to say</option>
+              <option>Under $5k</option>
+              <option>$5k – $20k</option>
+              <option>$20k – $60k</option>
+              <option>$60k +</option>
+            </select>
+          </div>
+          <div class="f-group" data-field="message">
+            <label for="message">Project details</label>
+            <textarea id="message" name="message" placeholder="What are you making, who is it for, and when do you need it?"></textarea>
+            <div class="f-help"></div>
+          </div>
+          <label class="file-drop" id="fileDrop">
+            <input type="file" id="file" accept=".pdf,.png,.jpg,.jpeg,.zip,.mp4,.mov,.step,.stp">
+            <span id="fileText">Drop a brief, script or sketch here, or <b>browse</b> to attach it</span>
+          </label>
+          <button class="btn primary submit" type="submit" id="sendBtn">Send message →</button>
+          <div class="form-success" id="formSuccess" role="status">
+            <div class="tick">✓</div>
+            <h3>Thank you!</h3>
+            <p class="muted">We have your message and will reply within two working days.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <p class="logo" style="font-size:1.3rem">Agency<span>.</span></p>
+    <div class="foot-links">
+      <a href="#/home">Home</a>
+      <a href="#/services">Services</a>
+      <a href="#/contact">Contact</a>
+      <a href="https://creosyncportfolio" target="_blank" rel="noopener">Portfolio</a>
+    </div>
+    <div class="copy">© <span id="year"></span> Agency. All rights reserved.</div>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="Back to top">↑</button>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
